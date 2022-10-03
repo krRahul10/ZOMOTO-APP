@@ -5,6 +5,8 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Cards from "./Cards";
 import { useEffect } from "react";
+import Set from "./Set";
+
 
 export const Search = () => {
   const [fdata, setFdata] = useState(Fooddata);
@@ -61,10 +63,11 @@ if(searchData === ""){
           Restaurant in Delhi Open Now
         </h2>
         <div className="row mt-2 d-flex justify-content-center align-items-center">
-          { copydata && copydata.length ?   <Cards data={copydata} /> : "Empty Data"}
+          { copydata && copydata.length ?   <Cards data={copydata} /> :  <Set sdata={fdata}/>}
         
         </div>
       </section>
+     
     </div>
   );
 };
