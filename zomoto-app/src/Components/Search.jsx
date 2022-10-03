@@ -12,7 +12,16 @@ export const Search = () => {
 console.log(copydata)
 
 const changeData = (e)=>{
-console.log(e)
+const searchData = e.toLowerCase()
+
+if(searchData === ""){
+  setCopyData(fdata)
+}else{
+  const filterData = copydata.filter((elem,index) => {
+    return elem.rname.toLowerCase().match(searchData)
+  })
+  setCopyData(filterData)
+}
 }
   useEffect(() => {
     setTimeout(()=>{
